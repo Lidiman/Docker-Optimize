@@ -26,9 +26,10 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/Minecraft:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/minecraft:latest .
 
       - name: Push Docker Image
         if: github.ref == 'refs/heads/main'
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/Minecraft:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/minecraft:latest
+
